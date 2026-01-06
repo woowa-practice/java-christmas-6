@@ -14,4 +14,12 @@ public class Orders {
     public List<Order> getOrders(){
         return Collections.unmodifiableList(orders);
     }
+
+    public int getCategoryCount(String menu){
+        int count=0;
+        for (Order order : orders) {
+            count+=order.orderCount(menu);
+        }
+        return count;
+    }
 }
