@@ -5,10 +5,10 @@ public class Order {
     private final int count;
     private final int price;
 
-    public Order(String name, int count, int price){
-        this.name=name;
+    public Order(Menu menu, int count){
+        this.name=menu.getName();
         this.count=count;
-        this.price=Menu.from(name).getPrice();
+        this.price= menu.getPrice();
     }
 
     public int orderCount(String menu){

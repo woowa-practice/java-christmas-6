@@ -13,9 +13,9 @@ public class TotalBenefit {
 
     public Order isTarget(){
         if(totalPrice<120000){
-            return new Order("없음", 0,0);
+            return new Order(Menu.NOPE, 0);
         }
-        return new Order(Menu.CHAM.getName(), 1, Menu.CHAM.getPrice());
+        return new Order(Menu.CHAM, 1);
     }
 
     //총 혜택 금액
@@ -23,12 +23,25 @@ public class TotalBenefit {
         return totalDiscount+gift.getPrice();
     }
 
+    public String getTotalBenefitAmount(int amount){
+        return String.format("%,d", amount);
+    }
+
     //할인 후 예상 결제 금액
-    public int applyDiscountPrice(){
+    public int discountApplyPrice(){
         return totalPrice-totalDiscount;
+    }
+
+    public String getDiscountApplyPrice(int price){
+        return String.format("%,d", price);
     }
 
     public int getTotalDiscount(){
         return totalDiscount;
+    }
+
+    public String getGift(){
+        if(gift.getName()=="없음") return gift.getName();
+        return gift.getName()+" "+gift.getCount()+"개";
     }
 }

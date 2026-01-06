@@ -16,6 +16,10 @@ public class Discount {
         return amount;
     }
 
+    public String getFormattedAmount(int amount){
+        return String.format("%,d", amount);
+    }
+
     public String getDescription(){
         return description;
     }

@@ -1,6 +1,7 @@
 package christmas;
 
 import christmas.domain.Discount;
+import christmas.domain.Menu;
 import christmas.domain.Order;
 import christmas.domain.Orders;
 import org.assertj.core.api.Assertions;
@@ -14,10 +15,10 @@ public class 할인테스트 {
     private final Discount Xdiscount=new Discount(1000, "특별할인");
     private final Discount weekdaydiscount=new Discount(2023, "평일할인");
     private final Discount weekenddiscount=new Discount(2023, "주말할인");
-    private final Order order1=new Order("바비큐립", 2, 54000);
-    private final Order order2=new Order("해산물파스타", 3, 35000);
-    private final Order order3=new Order("초코케이크", 2, 15000);
-    private final Order order4=new Order("아이스크림", 3, 5000);
+    private final Order order1=new Order(Menu.BBQ, 2);
+    private final Order order2=new Order(Menu.SEAPASTA, 3);
+    private final Order order3=new Order(Menu.CAKE, 2);
+    private final Order order4=new Order(Menu.ICECREAM, 3);
     private final Orders orders=new Orders(List.of(order1, order2, order3, order4));
 
     @Test

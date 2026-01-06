@@ -23,6 +23,10 @@ public class Orders {
         return count;
     }
 
+    public String getTotalAmount(int totalAmount){
+        return String.format("%,d", totalAmount);
+    }
+
     //메뉴 가격*주문 수량
     public int totalAmount(){
         int amount=0;
