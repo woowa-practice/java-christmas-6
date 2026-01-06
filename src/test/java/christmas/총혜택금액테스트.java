@@ -11,7 +11,7 @@ public class 총혜택금액테스트 {
 
     @Test
     void 총혜택금액테스트(){
-        Assertions.assertThat(25000).isEqualTo(totalBenefit.isTarget());
+        Assertions.assertThat(25000).isEqualTo(totalBenefit.isTarget().getPrice());
         Assertions.assertThat(60000).isEqualTo(totalBenefit.totalBenefitAmount());
     }
 }
