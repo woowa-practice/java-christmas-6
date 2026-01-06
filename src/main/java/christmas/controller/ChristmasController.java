@@ -52,7 +52,9 @@ public class ChristmasController {
         outputView.outputGift(totalBenefit);
         //혜택 내역 출력
         outputView.outputBenefitInfo(discountInfo, totalBenefit);
-        //총혜택 금액+할인후예상결제금액 출력
+        //총혜택 금액
+        outputView.outputTotalBenefit(totalBenefit);
+        //할인후예상결제금액 출력
         outputView.outputDiscountInfo(totalBenefit);
         //이벤트배지 생성
         Badge badge=new Badge();

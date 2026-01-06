@@ -36,16 +36,29 @@ public class OutputView {
     public void outputBenefitInfo(Map<String, Integer> discountInfo, TotalBenefit totalBenefit){
         System.out.println("<혜택 내역>");
         for (String s : discountInfo.keySet()) {
-            System.out.println(s+"-"+String.format("%,d",discountInfo.get(s)));
+            if(s.equals("없음")){
+                System.out.println("없음");
+                System.out.println();
+                return;
+            }
+            System.out.println(s+"-"+String.format("%,d",discountInfo.get(s))+"원");
         }
         System.out.println("증정 이벤트: -"+String.format("%,d", totalBenefit.getGift().getPrice())+"원");
         System.out.println();
     }
 
-    public void outputDiscountInfo(TotalBenefit totalBenefit){
+    public void outputTotalBenefit(TotalBenefit totalBenefit){
         System.out.println("<총혜택 금액>");
+        if(totalBenefit.totalBenefitAmount()==0){
+            System.out.println(totalBenefit.totalBenefitAmount()+"원");
+            System.out.println();
+            return;
+        }
         System.out.println("-"+totalBenefit.getTotalBenefitAmount(totalBenefit.totalBenefitAmount())+"원");
         System.out.println();
+    }
+
+    public void outputDiscountInfo(TotalBenefit totalBenefit){
         System.out.println("<할인 후 예상 결제 금액>");
         System.out.println(totalBenefit.getDiscountApplyPrice(totalBenefit.discountApplyPrice())+"원");
         System.out.println();
