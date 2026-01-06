@@ -17,9 +17,9 @@ public class Validator {
         invalidOrderInput(input);
         List<String> menu = new ArrayList<>();
         List<Integer> count = new ArrayList<>();
-        try{
+        try {
             Parser.parse(input, menu, count);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
         invalidOrderCount(count);
@@ -35,15 +35,15 @@ public class Validator {
     }
 
     private static int invalidDateInput(String input) {
-        try{
+        try {
             return Integer.parseInt(input.trim());
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
 
     }
 
-    private static void outOfRangeDate(int input){
+    private static void outOfRangeDate(int input) {
         if (input < 1 || input > 31) {
             throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
