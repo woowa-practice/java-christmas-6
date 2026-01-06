@@ -5,14 +5,14 @@ import christmas.util.Validator;
 
 public class InputView {
 
-    public Integer inputMeetDay() {
+    public int inputMeetDay() {
         while (true) {
             try {
                 System.out.println("12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)");
-                Integer day = Integer.parseInt(Console.readLine());
+                String day = Console.readLine();
                 Validator.validateDay(day);
-                return day;
-            } catch (Exception e) {
+                return Integer.parseInt(day);
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -25,7 +25,7 @@ public class InputView {
                 String input = Console.readLine();
                 Validator.validateMenu(input);
                 return input;
-            } catch (Exception e) {
+            } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }

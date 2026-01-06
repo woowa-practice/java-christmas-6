@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Validator {
 
-    public static void validateDay(Integer input) {
+    public static void validateDay(String input) {
         dayIsNull(input);
-        invalidDate(input);
+        outOfRangeDate(invalidDateInput(input));
     }
 
     public static void validateMenu(String input) {
@@ -17,20 +17,33 @@ public class Validator {
         invalidOrderInput(input);
         List<String> menu = new ArrayList<>();
         List<Integer> count = new ArrayList<>();
-        Parser.parse(input, menu, count);
+        try{
+            Parser.parse(input, menu, count);
+        }catch (IllegalArgumentException e){
+            System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        }
         invalidOrderCount(count);
         duplicatedMenu(menu);
         onlyDrink(menu);
         tooManyOrder(count);
     }
 
-    private static void dayIsNull(Integer input) {
+    private static void dayIsNull(String input) {
         if (input == null) {
             throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
     }
 
-    private static void invalidDate(Integer input) {
+    private static int invalidDateInput(String input) {
+        try{
+            return Integer.parseInt(input.trim());
+        }catch (NumberFormatException e){
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+        }
+
+    }
+
+    private static void outOfRangeDate(int input){
         if (input < 1 || input > 31) {
             throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
