@@ -40,8 +40,12 @@ public class TotalBenefit {
         return totalDiscount;
     }
 
-    public String getGift(){
+    public String giftInfo(){
         if(gift.getName()=="없음") return gift.getName();
         return gift.getName()+" "+gift.getCount()+"개";
+    }
+
+    public Order getGift(){
+        return gift;
     }
 }

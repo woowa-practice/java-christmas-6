@@ -40,21 +40,21 @@ public class ChristmasController {
         outputView.outputOrder(orders);
         //날짜에 해당하는 할인 진행
         int benefit=0;  //총할인금액
-        Discount dDayDiscount=new Discount(1000, "크리스마스 디데이 할인");
-        Discount xDiscount=new Discount(1000, "특별 할인");
-        Discount weekDayDiscount=new Discount(2023, "평일 할인");
-        Discount weekendDiscount=new Discount(2023, "주말 할인");
-        benefit+=dDayDiscount.ddayAmount(meetDay);
-        benefit+=xDiscount.XAmount(meetDay);
-        benefit+= weekDayDiscount.weekdayAmount(meetDay, orders);
-        benefit+=weekendDiscount.weekendAmount(meetDay, orders);
-        Discounts discounts=new Discounts(new ArrayList<>(List.of(dDayDiscount, xDiscount, weekDayDiscount, weekendDiscount)));
+//        Discount dDayDiscount=new Discount(1000, "크리스마스 디데이 할인");
+//        Discount xDiscount=new Discount(1000, "특별 할인");
+//        Discount weekDayDiscount=new Discount(2023, "평일 할인");
+//        Discount weekendDiscount=new Discount(2023, "주말 할인");
+//        benefit+=dDayDiscount.ddayAmount(meetDay);
+//        benefit+=xDiscount.XAmount(meetDay);
+//        benefit+= weekDayDiscount.weekdayAmount(meetDay, orders);
+//        benefit+=weekendDiscount.weekendAmount(meetDay, orders);
+//        Discounts discounts=new Discounts(new ArrayList<>(List.of(dDayDiscount, xDiscount, weekDayDiscount, weekendDiscount)));
         //총혜택 생성
         TotalBenefit totalBenefit=new TotalBenefit(orders.totalAmount(), benefit);
         //증정메뉴 여부 출력
         outputView.outputGift(totalBenefit);
         //혜택 내역 출력
-        outputView.outputBenefitInfo(discounts);
+//        outputView.outputBenefitInfo(discounts, totalBenefit);
         //총혜택 금액+할인후예상결제금액 출력
         outputView.outputDiscountInfo(totalBenefit);
         //이벤트배지 생성

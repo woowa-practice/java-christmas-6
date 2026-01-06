@@ -26,17 +26,18 @@ public class OutputView {
 
     public void outputGift(TotalBenefit totalBenefit){
         System.out.println("<증정 메뉴>");
-        System.out.println(totalBenefit.getGift());
+        System.out.println(totalBenefit.giftInfo());
         System.out.println();
     }
 
-    public void outputBenefitInfo(Discounts discounts){
-        System.out.println("<혜택 내역>");
-        for (Discount discount : discounts.getDiscounts()) {
-            System.out.println(discount.getDescription()+": -"+discount.getFormattedAmount(discount.getAmount())+"원");
-        }
-        System.out.println();
-    }
+//    public void outputBenefitInfo(Discounts discounts, TotalBenefit totalBenefit){
+//        System.out.println("<혜택 내역>");
+//        for (Discount discount : discounts.getDiscounts()) {
+//            System.out.println(discount.getDescription()+": -"+discount.getFormattedAmount(discount.getAmount())+"원");
+//        }
+//        System.out.println("증정 이벤트: -"+String.format("%,d", totalBenefit.getGift().getPrice())+"원");
+//        System.out.println();
+//    }
 
     public void outputDiscountInfo(TotalBenefit totalBenefit){
         System.out.println("<총혜택 금액>");
