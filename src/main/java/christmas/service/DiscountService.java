@@ -24,4 +24,14 @@ public class DiscountService {
 
         return discountInfo;
     }
+
+    public int totalDiscount(int day, Orders orders){
+        int amount=0;
+        for (Discount discount : discounts) {
+            if(discount.calculateDiscount(day, orders)>0){
+                amount+=discount.calculateDiscount(day, orders);
+            }
+        }
+        return amount;
+    }
 }

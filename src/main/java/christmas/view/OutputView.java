@@ -1,6 +1,9 @@
 package christmas.view;
 
 import christmas.domain.*;
+import christmas.service.DiscountService;
+
+import java.util.Map;
 
 public class OutputView {
 
@@ -29,15 +32,15 @@ public class OutputView {
         System.out.println(totalBenefit.giftInfo());
         System.out.println();
     }
-
-//    public void outputBenefitInfo(Discounts discounts, TotalBenefit totalBenefit){
-//        System.out.println("<혜택 내역>");
-//        for (Discount discount : discounts.getDiscounts()) {
-//            System.out.println(discount.getDescription()+": -"+discount.getFormattedAmount(discount.getAmount())+"원");
-//        }
-//        System.out.println("증정 이벤트: -"+String.format("%,d", totalBenefit.getGift().getPrice())+"원");
-//        System.out.println();
-//    }
+    
+    public void outputBenefitInfo(Map<String, Integer> discountInfo, TotalBenefit totalBenefit){
+        System.out.println("<혜택 내역>");
+        for (String s : discountInfo.keySet()) {
+            System.out.println(s+"-"+String.format("%,d",discountInfo.get(s)));
+        }
+        System.out.println("증정 이벤트: -"+String.format("%,d", totalBenefit.getGift().getPrice())+"원");
+        System.out.println();
+    }
 
     public void outputDiscountInfo(TotalBenefit totalBenefit){
         System.out.println("<총혜택 금액>");
