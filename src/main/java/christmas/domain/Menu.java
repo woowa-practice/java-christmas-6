@@ -1,6 +1,8 @@
 package christmas.domain;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public enum Menu {
     SOUP("양송이수프",6000),TAPAS("타파스",5500),SALAD("시저샐러드",8000),
@@ -23,7 +25,27 @@ public enum Menu {
                 .orElseThrow(()->new IllegalArgumentException("[ERROR] 찾는 메뉴가 없습니다."));
     }
 
+    public static List<String> getAppetizer(){
+        return new ArrayList<>(List.of(SOUP.name, TAPAS.name, SALAD.name));
+    }
+
+    public static List<String> getMain(){
+        return new ArrayList<>(List.of(STAKE.name, BBQ.name, SEAPASTA.name, XPASTA.name));
+    }
+
+    public static List<String> getDessert(){
+        return new ArrayList<>(List.of(CAKE.name, ICECREAM.name));
+    }
+
+    public static List<String> getDrink(){
+        return new ArrayList<>(List.of(COKE.name, WINE.name, CHAM.name));
+    }
+
     public int getPrice(){
         return price;
+    }
+
+    public String getName(){
+        return name;
     }
 }
