@@ -3,7 +3,7 @@ package christmas.domain;
 public class TotalBenefit {
     private final int totalPrice;
     private final int totalDiscount;
-    private int gift;
+    private final Order gift;
 
     public TotalBenefit(int totalPrice, int totalDiscount){
         this.totalPrice=totalPrice;
@@ -11,22 +11,18 @@ public class TotalBenefit {
         this.gift=isTarget();
     }
 
-    public int isTarget(){
+    public Order isTarget(){
         if(totalPrice<120000){
-            return 0;
+            return null;
         }
-        return 25000;
+        return new Order(Menu.CHAM.getName(), 1, Menu.CHAM.getPrice());
     }
 
     public int totalBenefitAmount(){
-        return totalDiscount+gift;
+        return totalDiscount+gift.getPrice();
     }
 
     public int getTotalDiscount(){
         return totalDiscount;
-    }
-
-    public int getGift(){
-        return gift;
     }
 }

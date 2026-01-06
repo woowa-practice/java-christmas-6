@@ -10,10 +10,10 @@ import java.util.List;
 
 public class 평일할인테스트 {
     private final WeekdayDiscount weekDayDiscount=new WeekdayDiscount();
-    private final Order order1=new Order("양송이수프", 1);
-    private final Order order2=new Order("타파스", 1);
-    private final Order order3=new Order("초코케이크", 2);
-    private final Order order4=new Order("아이스크림", 3);
+    private final Order order1=new Order("양송이수프", 1, 6000);
+    private final Order order2=new Order("타파스", 1, 5500);
+    private final Order order3=new Order("초코케이크", 2, 15000);
+    private final Order order4=new Order("아이스크림", 3, 5000);
     private final Orders orders=new Orders(List.of(order1, order2, order3, order4));
 
     @Test

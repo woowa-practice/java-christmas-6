@@ -27,7 +27,8 @@ public class Orders {
     public int totalAmount(){
         int amount=0;
         for (Order order : orders) {
-            amount+=Menu.from(order.getName()).getPrice()*order.getCount();
+            amount+=order.orderPrice();
+//            amount+=Menu.from(order.getName()).getPrice()*order.getCount();
         }
         return amount;
     }

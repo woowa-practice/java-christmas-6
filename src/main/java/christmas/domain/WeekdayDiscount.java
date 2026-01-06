@@ -27,6 +27,6 @@ public class WeekdayDiscount {
     //월화수목일
     private boolean isWeekDay(int day){
         LocalDate date=LocalDate.of(2023, 12, day);
-        return date.getDayOfWeek().getValue()<4||date.getDayOfWeek().getValue()==7;
+        return date.getDayOfWeek().getValue()<5||date.getDayOfWeek().getValue()==7;
     }
 }
