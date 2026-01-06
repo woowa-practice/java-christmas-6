@@ -7,10 +7,10 @@ import christmas.view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
-        InputView inputView=new InputView();
-        OutputView outputView=new OutputView();
-        DiscountService discountService=new DiscountService();
-        ChristmasController christmasController=new ChristmasController(inputView, outputView, discountService);
+        InputView inputView = new InputView();
+        OutputView outputView = new OutputView();
+        DiscountService discountService = new DiscountService();
+        ChristmasController christmasController = new ChristmasController(inputView, outputView, discountService);
 
         christmasController.run();
     }

@@ -1,13 +1,13 @@
 package christmas.domain;
 
-public class NoDiscount implements Discount{
+public class NoDiscount implements Discount {
     @Override
-    public int calculateDiscount(int day, Orders orders){
+    public int calculateDiscount(int day, Orders orders) {
         return 0;
     }
 
     @Override
-    public String getDescription(){
+    public String getDescription() {
         return "없음";
     }
 }
