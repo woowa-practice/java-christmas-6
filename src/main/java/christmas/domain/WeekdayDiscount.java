@@ -3,10 +3,10 @@ package christmas.domain;
 import java.time.LocalDate;
 import java.util.List;
 
-public class WeekDayDiscount {
+public class WeekdayDiscount {
     private int amount;
 
-    public WeekDayDiscount(){
+    public WeekdayDiscount(){
         this.amount=2023;
     }
 

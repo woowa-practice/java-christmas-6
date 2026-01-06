@@ -2,14 +2,14 @@ package christmas;
 
 import christmas.domain.Order;
 import christmas.domain.Orders;
-import christmas.domain.WeekDayDiscount;
+import christmas.domain.WeekdayDiscount;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 public class 평일할인테스트 {
-    private final WeekDayDiscount weekDayDiscount=new WeekDayDiscount();
+    private final WeekdayDiscount weekDayDiscount=new WeekdayDiscount();
     private final Order order1=new Order("양송이수프", 1);
     private final Order order2=new Order("타파스", 1);
     private final Order order3=new Order("초코케이크", 2);
